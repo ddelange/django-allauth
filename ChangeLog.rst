@@ -8,6 +8,13 @@
     https://allauth.org/sponsors/. Your support helps keep this project thriving!
 
 
+Fixes
+-----
+
+- Headless: Posting a well-formed JSON payload that was not an object (e.g. a
+  list or a string) to the headless endpoints resulted in a server error.
+
+
 Security notice
 ---------------
 
