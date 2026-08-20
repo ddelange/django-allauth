@@ -48,7 +48,7 @@ def test_activate_totp_rate_limit(
             assert resp.context["form"].errors == {
                 "code": [
                     (
-                        "Too many failed login attempts. Try again later."
+                        "Be patient, you are sending too many requests."
                         if is_locked
                         else "Incorrect code."
                     )

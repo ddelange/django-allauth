@@ -140,8 +140,8 @@ def test_activate_totp_rate_limit(
                 (
                     {
                         "param": "code",
-                        "message": "Too many failed login attempts. Try again later.",
-                        "code": "too_many_login_attempts",
+                        "message": "Be patient, you are sending too many requests.",
+                        "code": "rate_limited",
                     }
                     if is_locked
                     else {

@@ -26,7 +26,7 @@ class ActivateTOTPForm(forms.Form):
 
     def clean_code(self) -> str:
         validate_can_add_authenticator(self.user)
-        clear_rl = check_rate_limit(self.user)
+        clear_rl = check_rate_limit(self.user, error_key="rate_limited")
         code = self.cleaned_data["code"]
         if not auth.validate_totp_code(self.secret, code):
             raise get_adapter().validation_error("incorrect_code")

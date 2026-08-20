@@ -8,10 +8,13 @@
     https://allauth.org/sponsors/. Your support helps keep this project thriving!
 
 
-Fixes
------
+Security notice
+---------------
 
-- ...
+- MFA: TOTP enrollment code verification was not rate limited. Impact is
+  limited, as to exploit this you would need to be already fully authenticated,
+  pass (rate-limited) reauthentication, and brute force within a 30s TOTP
+  window.
 
 
 65.19.1 (2026-08-13)
